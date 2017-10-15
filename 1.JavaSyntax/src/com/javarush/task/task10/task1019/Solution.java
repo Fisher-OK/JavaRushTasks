@@ -1,0 +1,31 @@
+package com.javarush.task.task10.task1019;
+
+import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
+
+/* 
+Функциональности маловато!
+*/
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        HashMap<String, Integer> map = new HashMap<>();
+
+        int id = 0;
+        String name = null;
+        while (true) {
+            String id1 = reader.readLine();
+            if (id1.isEmpty()) break;
+            id = Integer.parseInt(id1);
+            name = reader.readLine();
+            if (name.isEmpty()) break;
+            map.put(name, id);
+        }
+
+        for (Map.Entry<String, Integer> pair : map.entrySet()) {
+            System.out.println(pair.getValue() + " " + pair.getKey());
+        }
+    }
+}
